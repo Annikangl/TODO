@@ -1,0 +1,266 @@
+@import './utils/reset.scss';
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    background-color: #fff;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.header__inner {
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.form-group {
+    margin: 0 auto;
+}
+
+.newtask__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+label {
+    display: block;
+    margin: 5px 0 10px 0;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 27px;
+    letter-spacing: 0.5px;
+    color: #3E5481;
+}
+
+input, textarea {
+    transition: border .2s linear;
+}
+
+#task-title {
+    height: 50px;
+    padding: 0 0 0 15px;
+    min-width: 300px;
+    background: #FFFFFF;
+    border: 1px solid #D0DBEA;
+    border-radius: 32px;
+    font-size: 18px;
+
+    &.input-danger {
+        border-color: #c33b3b;
+    }
+
+    &:focus {
+        border: 2px solid #1FCC79;
+        outline: none;
+    }
+}
+
+#task-text {
+    min-width: 300px;
+    height: 120px;
+    background: #FFFFFF;
+    border: 1px solid #D0DBEA;
+    border-radius: 8px;
+    font-size: 18px;
+    padding: 10px 5px 0 5px;
+    
+
+    &:focus {
+        border: 2px solid #1FCC79;
+        outline: none;
+    }
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.007em;
+    color: #9FA5C0;
+}
+
+.add__task {
+    margin: 20px 0 10px 0;
+    width: 230px;
+    background: #1FCC79;
+    border: 0;
+    border-radius: 32px;
+    padding: 15px 25px;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        font-weight: bold;
+    }
+
+    &:focus {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        font-weight: bold;
+    }
+}
+
+.tasks-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.task {
+    margin: 20px 10px 20px 0;
+    border: 1px solid #D0DBEA;
+    min-height: 130px;
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    transition: all .25s cubic-bezier(.02,.01,.47,.1);
+
+    &.grid {
+        width: 48%;
+    }
+
+    &:hover {
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+}
+
+.tasks__filters {
+    display: flex;
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+.search__filter {
+    margin: 0 10px 0 0;
+}
+
+#task-search {
+    padding: 10px 15px;
+    background: #F4F5F7;
+    border: 0;
+    border-radius: 32px;
+
+    &:focus {
+        border: 2px solid #1FCC79;
+        outline: none;
+    }
+}
+
+.column__img, .grid__img {
+    width: 20px;
+    height: 20px;
+    max-width: 100%;
+    padding: 6px 5px;
+    cursor: pointer;
+}
+
+.notif {
+    text-align: center;
+    height: 150px;
+}
+
+.notif-empty {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.column__img {
+    margin-right: 5px;
+    &.active {
+        border: 1px solid #D0DBEA;
+        border-radius: 5px;
+        box-shadow:-1px 1px 2px 2px rgba(34, 60, 80, 0.2) inset;
+    }
+}
+
+.grid__img {
+    &.active {
+        border: 1px solid #D0DBEA;
+        border-radius: 5px;
+        box-shadow:-1px 1px 2px 2px rgba(34, 60, 80, 0.2) inset;
+    }
+}
+
+.task__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.task__created__date {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(46, 62, 92, 1);
+}
+
+.task__actions {
+    position: relative;
+}
+
+.task__edit_btn {
+    width: 25px;
+    height: 20px;
+    margin-right: 10px;
+    padding: 0;
+    background: url('../img/svg/pencil.svg') 0 0 no-repeat;
+    border: 0;
+    cursor: pointer;
+    transition: transform .2s linear;
+   
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.task__remove_btn {
+    width: 20px;
+    height: 20px;
+    background: url('../img/svg/remove.svg') 0 0 no-repeat;
+    border: 0;
+    cursor: pointer;
+    transition: transform .2s linear;
+    outline: none;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.task__content {
+    padding: 0 15px;
+}
+
+.content__title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 27px;
+    letter-spacing: 0.5px;
+    color: #2E3E5C;
+}
+
+.content__text {
+    color: #676c7e;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+.msg-error {
+    color: rgb(195, 59, 59);
+}
