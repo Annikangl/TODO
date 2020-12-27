@@ -1,4 +1,8 @@
-# new-notes
+# Простое приложение для заметок на Vue JS
+
+# Технологии:
+1. Vue CLI
+2. HTML, SCSS
 
 ## Project setup
 ```
