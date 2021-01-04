@@ -22,13 +22,15 @@ export default {
   },
   data() {
     return {
-      tasks: [],
+      tasks: JSON.parse(localStorage.getItem('tasks')) ? JSON.parse(localStorage.getItem('tasks')): [],
     }
   },
 
   methods: {
     addTask(task) {
-      this.tasks.push(task);
+      let tasks = this.tasks;
+      tasks.push(task);
+      localStorage.setItem('tasks',JSON.stringify(tasks)); // добавляем заметку в LocalStorange
     },
 
   }

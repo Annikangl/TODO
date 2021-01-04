@@ -77,6 +77,9 @@ export default {
     methods: {
         removeTask(id) {
             this.tasks.splice(id,1);
+            let currentTasks = JSON.parse(localStorage.tasks);
+            currentTasks.splice(id,1);
+            localStorage.setItem('tasks', JSON.stringify(currentTasks));
         },
     }
 }
