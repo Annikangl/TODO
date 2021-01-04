@@ -2,9 +2,7 @@
   <section class="tasks">
       <div class="container">
           <div class="tasks__filters">
-              <div class="search__filter">
-                  <input type="search" id="task-search" placeholder="Поиск">
-              </div>
+              <search @search='search = $event'></search>
               <div class="column__filter">
                   <img src="../assets/img/svg/row.svg" alt="row" class="column__img" :class="{ active: isActive }" @click="isActive = true" >
               </div>
@@ -17,7 +15,7 @@
               <img src="../assets/img/sad_emj.png" alt="sad" class="notif-empty__img">
           </div>
           <div class="tasks-wrapper"  v-else>
-          <div class="task" :class="{ grid: !isActive}"  v-for="(task,index) in tasks" :key="index">
+          <div class="task" :class="{ grid: !isActive}"  v-for="(task,index) in tasksFilter" :key="index">
               <div class="task__header">
                   <div class="task__created__date">{{ task.date }}</div>
                   <div class="task__actions">
@@ -38,7 +36,14 @@
 </template>
 
 <script>
+
+
+import search from './Search';
 export default {
+    components: {
+        search
+    },
+
     props: {
         tasks: {
             type: Array
@@ -48,13 +53,31 @@ export default {
     data() {
         return {
             isActive: true,
+            search: ''
+        }
+    },
+
+    computed: {
+        tasksFilter() {
+            let arr = this.tasks;
+            let search = this.search;
+
+            if (!search) return arr;
+
+            search = search.trim().toLowerCase();
+            arr = arr.filter(function(item) {
+                if (item.title.toLowerCase().indexOf(search) !== -1) {
+                return item;
+                }
+            })
+            return arr;
         }
     },
 
     methods: {
         removeTask(id) {
             this.tasks.splice(id,1);
-        }
+        },
     }
 }
 </script>

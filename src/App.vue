@@ -29,7 +29,8 @@ export default {
   methods: {
     addTask(task) {
       this.tasks.push(task);
-    }
+    },
+
   }
 }
 </script>
