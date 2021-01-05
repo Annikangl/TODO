@@ -13,9 +13,10 @@
 
 ## Вид на mobile версии
 
-![mobile#1](https://user-images.githubusercontent.com/32800337/103171694-5b8d1e00-485f-11eb-9782-4cbb657b2420.JPG)
+![NGDCK4E93ZY](https://user-images.githubusercontent.com/32800337/103631817-87da2600-4f54-11eb-909b-e51551fdda3e.jpg)
 
-![mobile#2](https://user-images.githubusercontent.com/32800337/103171696-5d56e180-485f-11eb-8b50-62aad32fdeab.JPG)
+![YCHWOTmBcQo](https://user-images.githubusercontent.com/32800337/103631835-8c9eda00-4f54-11eb-888c-2b064067c8be.jpg)
+
 
 
 ## Project setup
