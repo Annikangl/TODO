@@ -91,6 +91,20 @@ textarea::placeholder {
     color: #9FA5C0;
 }
 
+.task-priority {
+    display: block;
+    height: 50px;
+    width: 300px;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
 .add__task {
     margin: 20px 0 10px 0;
     width: 230px;
@@ -198,6 +212,14 @@ textarea::placeholder {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+
+    &.hight {
+        background: #eaf3bd;
+    }
+
+    &.veryHight {
+        background: #fba5a5;
+    }
 }
 
 .task__created__date {

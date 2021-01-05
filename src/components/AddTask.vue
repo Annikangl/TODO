@@ -8,6 +8,14 @@
             v-model="title" :class="{ 'input-danger': hasError }">
           </div>
           <div class="form-group">
+            <select v-model="priority" class="task-priority">
+              <option disabled value="">Приоритет</option>
+              <option class="normal">Стандартный</option>
+              <option class="hight">Важно</option>
+              <option class="very=hight">Очень важно</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="task-text" class="task__text-lb">Описание</label>
             <textarea id="task-text" placeholder="Описание задачи" v-model="descr"></textarea>
           </div>
@@ -29,6 +37,7 @@ export default {
       hasError: false,
       title: '',
       descr: '',
+      priority: '',
       note: []
     }
   },
@@ -40,11 +49,12 @@ export default {
         this.hasError = true;
         return;
       }
-      this.$emit('addTask', {title: this.title, descr: this.descr, date: new Date(Date.now()).toLocaleString() });
+      this.$emit('addTask', {title: this.title, descr: this.descr, date: new Date(Date.now()).toLocaleString(), priority: this.priority });
       this.message = null;
       this.title = '';
+      this.priority = '';
       this.descr = '';
-    }
+    },
   }
 }
 </script>
