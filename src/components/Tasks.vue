@@ -2,7 +2,9 @@
   <section class="tasks">
       <div class="container">
           <div class="tasks__filters">
+
               <search @search='search = $event'></search>
+
               <div class="column__filter">
                   <img src="../assets/img/svg/row.svg" alt="row" class="column__img" :class="{ active: isActive }" @click="isActive = true" >
               </div>
@@ -16,7 +18,7 @@
           </div>
           <div class="tasks-wrapper"  v-else>
           <div class="task" :class="{ grid: !isActive}"  v-for="(task,index) in tasksFilter" :key="index">
-              <div class="task__header">
+              <div class="task__header" :class="{ hight: task.priority =='Важно', veryHight: task.priority == 'Очень важно'}">
                   <div class="task__created__date">{{ task.date }}</div>
                   <div class="task__actions">
                       <button class="task__edit_btn" type="button"></button>
@@ -53,7 +55,7 @@ export default {
     data() {
         return {
             isActive: true,
-            search: ''
+            search: '',
         }
     },
 
