@@ -1,7 +1,7 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :class="{ dark: darkMode }">
     <div class="wrapper-content">
-      <todoHeader></todoHeader>
+      <todoHeader :class="{ dark: darkMode }" @switchTheme=switchTheme($event)></todoHeader>
       <addTask @addTask='addTask($event)'></addTask>
       <tasks :tasks ="tasks"></tasks>
     </div>
@@ -23,8 +23,10 @@ export default {
   data() {
     return {
       tasks: JSON.parse(localStorage.getItem('tasks')) ? JSON.parse(localStorage.getItem('tasks')): [],
+      darkMode: false,
     }
   },
+
 
   methods: {
     addTask(task) {
@@ -33,6 +35,20 @@ export default {
       localStorage.setItem('tasks',JSON.stringify(tasks)); // добавляем заметку в LocalStorange
     },
 
+    switchTheme(value) {
+      value == 'Light' ? this.darkMode = true : this.darkMode = false;
+      // return this.darkMode;
+    }
+  },
+
+  watch: {
+    darkMode() {
+      localStorage.setItem('darkMode',JSON.stringify(this.darkMode));
+    }
+  },
+
+  created() {
+    this.darkMode = JSON.parse(localStorage.getItem('darkMode'));
   }
 }
 </script>
