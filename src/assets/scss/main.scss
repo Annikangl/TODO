@@ -6,6 +6,15 @@ body {
     background-color: #fff;
 }
 
+.wrapper {
+    min-height: 100vh;
+    background: #fff;
+
+    &.dark {
+        filter: invert(100%);
+    }
+}
+
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -262,6 +271,7 @@ textarea::placeholder {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    background: #f4f5f7;
 
     &.hight {
         background: #eaf3bd;
@@ -273,7 +283,7 @@ textarea::placeholder {
 }
 
 .task__created__date {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 12px;
     line-height: 15px;
     color: rgba(46, 62, 92, 1);
@@ -314,7 +324,7 @@ textarea::placeholder {
 }
 
 .task__content {
-    padding: 0 15px;
+    padding: 7px 15px;
 }
 
 .content__title {
