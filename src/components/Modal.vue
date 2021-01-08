@@ -3,7 +3,7 @@
       <div class="modal__content" @click.stop="">
           <div class="modal__header">
               <span class="modal-title">{{ title }} </span>
-              <span class="btn-close" @click="$emit('close')">X</span>
+              <span class="task__remove_btn" @click="$emit('close')"></span>
           </div>
 
           <div class="modal__body">
