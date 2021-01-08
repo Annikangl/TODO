@@ -37,7 +37,6 @@ export default {
 
     switchTheme(value) {
       value == 'Light' ? this.darkMode = true : this.darkMode = false;
-      // return this.darkMode;
     }
   },
 

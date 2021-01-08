@@ -83,11 +83,14 @@ input:checked[type="checkbox"]::before {
     margin: 0 auto;
 }
 
+.newtask {
+    text-align: center;
+}
+
 .newtask__wrapper {
     display: flex;
     flex-direction: column;
     padding: 0 0 10px 0;
-    border-bottom: 1px solid #ccc;
 }
 
 label {
