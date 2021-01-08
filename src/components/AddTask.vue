@@ -1,6 +1,6 @@
 <template>
   <section class="newtask">
-    <button class="btn add__task" @click="modal.show = !modal.show">Добавить задача</button>
+    <button class="btn add__task" @click="modal.show = !modal.show">Добавить задачу</button>
     
     <Modal title="Новая задача" v-show="modal.show" @close="modal.show = false">
       <div slot="body">
@@ -83,6 +83,7 @@ export default {
       this.title = "";
       this.priority = "";
       this.descr = "";
+      this.modal.show = false;
     },
   },
 };

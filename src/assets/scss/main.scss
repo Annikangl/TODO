@@ -348,3 +348,18 @@ textarea::placeholder {
 .msg-error {
     color: rgb(195, 59, 59);
 }
+
+@media (max-width: 630px) {
+    .task:nth-child(even) {
+        margin-right: 0;
+    }
+
+    .task.grid {
+        width: 47%;
+
+    }
+
+    .content__title, .content__text {
+        font-size: 14px;
+    }
+}

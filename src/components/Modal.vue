@@ -1,4 +1,5 @@
 <template>
+<transition name="fade">
   <div class="modal__wrapper" @click="$emit('close')">
       <div class="modal__content" @click.stop="">
           <div class="modal__header">
@@ -11,6 +12,7 @@
           </div>
       </div>
   </div>
+</transition>
 </template>
 
 <script>
@@ -40,6 +42,12 @@ export default {
 
 <style lang="scss" scoped>
 // Animation
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
 
 
 .modal__wrapper{
